@@ -30,7 +30,13 @@ struct fs_response {
 struct fs_stat_response {
     struct fs_response base_response;
     struct {
-        /* TODO */
+        mode_t st_mode;
+        off_t st_size;
+        struct timespec st_atim;
+        struct timespec st_mtim;
+        struct timespec st_ctim;
+        blkcnt_t st_blocks;
+        blksize_t st_blksize;
     } stat;
 };
 
